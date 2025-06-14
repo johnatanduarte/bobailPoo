@@ -1,0 +1,19 @@
+@startuml diagrama_classes
+title Diagrama de Classes - Bobail
+
+class GameState {
+  +char board[5][5]
+  +GameState()
+  +void initializeBoard()
+  +void printBoard()
+  +bool isVictory(char piece, int x, int y)
+}
+
+class Movement {
+  +static bool isMaximumMove(GameState &state, char piece, int x, int y, int newX, int newY)
+  +static bool movePiece(GameState &state, char piece, int x, int y, int newX, int newY)
+}
+
+GameState <-- Movement : usa
+
+@enduml
